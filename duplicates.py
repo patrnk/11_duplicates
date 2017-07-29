@@ -14,12 +14,12 @@ def get_filepaths_in_folder(folder_path):
 
 
 def compute_file_hash(byte_file):
-    BUFFER_SIZE = 65536  # 64kb
+    buffer_size = 65536  # 64kb
     md5 = hashlib.md5()
-    received_data = byte_file.read(BUFFER_SIZE)
+    received_data = byte_file.read(buffer_size)
     while received_data:
         md5.update(received_data)
-        received_data = byte_file.read(BUFFER_SIZE)
+        received_data = byte_file.read(buffer_size)
     return md5.hexdigest()
 
 
